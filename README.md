@@ -1,4 +1,3 @@
-
 # SMD ScoreCard (Coming Soon)
 
 ## Synthetic Medical Data (SMD) Quality Library
@@ -7,25 +6,76 @@ A Python library for evaluating the quality of synthetic medical data (SMD) usin
 
 ---
 
-## Features
+## Index
 
-### 7Cs Quality Evaluation
-- Extract feature representation for quality quantification
-- Compute metrics for:
-  - **Congruence**: Measures the alignment between synthetic and real datasets to ensure structural, statistical, and visual similarity.
-  - **Coverage**: Evaluates the diversity, representativeness, and novelty of the synthetic dataset. 
-  - **Constraint**: Ensures that the synthetic data adheres to known constraints, which include clinical, imaging, geometric, or technical. 
-  - **Completeness**: Checks whether synthetic data includes all necessary information (e.g., labels, metadata) required for its intended use.
-  - **Compliance**: Assesses adherence to regulatory standards, fomrat, privacy, and institutional guidelines.
-  - **Comprehension**: Evaluates the clarity and interpretability of the synthetic dataset's documentation.
-  - **Consistency**: Ensures uniformity and stability of data quality across subgroups, batches, or time periods.
+- [Overview](#overview)
+- [Installation](#installation)
+- [Key Features](#key-features)
+  - [Feature Extraction](#feature-extraction)
+  - [Quality Quantification](#quality-quantification)
+  - [Aggregated Score Computation](#aggregated-score-computation)
+  - [SMD Card Generation](#smd-card-generation)
+- [Flexible Input Types](#flexible-input-types)
+- [Extensibility](#extensibility)
 
-    
-- Support for global and local quality assessments.
+---
 
-<br><br>
+## Overview
 
-###  Library Metrics
+The **SMD ScoreCard** library provides a structured framework for evaluating the quality of synthetic medical datasets. Leveraging the **7Cs framework**, the library helps researchers and developers assess critical aspects of synthetic datasets, including correctness, coverage, constraints, and compliance. Additionally, it offers tools for feature extraction, quality quantification, and documentation, ensuring that datasets meet clinical, technical, and regulatory standards.
+
+---
+
+## Installation
+
+### Prerequisites
+
+Ensure that you have Python 3.8 or higher installed on your system. 
+
+### Installation Steps
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-username/smd-scorecard.git
+   cd smd-scorecard
+
+2. **Install Required Packages**
+   Use the requirements.txt file to install dependencies:
+   ```bash
+   pip install -r requirements.txt
+
+3. **Verify Installation**
+   Run the following command to check if the library is correctly installed:
+   ```bash
+   python -m smd_scorecard --help
+
+   
+--- 
+## Key Features
+
+### Feature Extraction
+
+The library includes a **Feature Extraction Module** to extract meaningful representations from data, including:
+
+- **Token Embeddings**: Extract features from clinical notes or textual data to enable semantic analysis.
+- **Imaging Features**: Extract spatial, intensity, or structural properties from medical images using radiomic or deep learning-based embeddings.
+- **Feature Summarization**: Summarize high-dimensional feature spaces to compact representations using techniques like dimensionality reduction or statistical summarization.
+
+---
+
+### Quality Quantification
+
+The second step involves **quantification based on the 7Cs framework**, which evaluates SMD across key quality dimensions:
+
+1. **Congruence**: Measures alignment between synthetic and real data.
+2. **Coverage**: Evaluates diversity, representativeness, and novelty.
+3. **Constraint**: Ensures adherence to known constraints, including clinical, imaging, and technical.
+4. **Completeness**: Assesses whether all necessary information (e.g., labels, metadata) is included.
+5. **Compliance**: Verifies adherence to regulatory standards, privacy, and format guidelines.
+6. **Comprehension**: Evaluates clarity and interpretability of accompanying documentation.
+7. **Consistency**: Ensures uniformity of quality across subgroups, batches, or time periods.
+
+###  Quantification Metrics
 The library contains a range of metrics summarized in the table below. Key attributes for each metric are described as follows:
 - **Space**: Indicates the domain where the metric operates (e.g., embedding, metadata fields).
 - **Binary**: Specifies whether the metric can be applied to synthetic data alone (unary) or requires comparison with patient data (binary).
@@ -75,20 +125,63 @@ Note that the Direction of Coverage metrics should be maximized within a specifi
 | Maximum-Minimum Difference     | Quality Metrics    | Unary       | Minimize      | No                 | Calculates the range of quality metrics across subgroups.                      |
 | Analysis of Variance           | Quality Metrics    | Unary       | Stat. Sig.    | No                 | Tests statistical significance of quality variations across subgroups.         |
 
+---
+### Aggregated Score Computation
 
- 
-### Flexible Input Types
-- Analyze image datasets or embeddings.
-- Tailor metrics to specific criteria and constraints.
+The library provides a module for computing an **aggregated quality score** based on:
+
+- **Normalized Averaging**: Averages metrics across criteria to generate a composite score.
+- **Geometric Mean**: Aggregates metrics to reflect trade-offs between different quality aspects.
+
+---
 
 ### SMD Card Generation
-- Automatically generate a JSON-formatted card summarizing dataset quality.
-- Document:
-  - General information
-  - Quantitative results
-  - Task performance
-  - Ethical considerations
 
-### Extensibility
-- Add custom metrics for specific evaluation needs.
-- Adapt the card to fit diverse applications and regulatory contexts.
+The library includes a **SMD Card Tool** to assist researchers in documenting and summarizing their datasets. This tool enables:
+
+- **Extraction of Descriptive Information**: Automatically gathers and summarizes general dataset details.
+- **Standardized Reporting**: Generates a JSON-formatted card summarizing:
+  - General dataset information
+  - Quantitative results
+  - Task-specific performance metrics
+  - Ethical considerations and limitations
+- **Customizable Templates**: Tailor the SMD Card to specific regulatory or research requirements.
+
+---
+
+## Flexible Input Types
+
+The library supports:
+
+- **Image Datasets**: Analyze medical images using radiomic and deep features.
+- **Token Embeddings**: Evaluate clinical notes or textual datasets.
+- **Tabular Data**: Apply quality metrics to numerical datasets.
+
+---
+
+## Extensibility
+
+The **SMD ScoreCard** library is designed to be adaptable:
+
+- **Add Custom Metrics**: Extend the library by defining metrics specific to your evaluation needs.
+- **Customize the SMD Card**: Modify templates to align with clinical, regulatory, or application-specific contexts.
+- **Support for Diverse Modalities**: Expand feature extraction capabilities to additional data types (e.g., genomic data, signals).
+
+This library aims to simplify and standardize the evaluation of synthetic datasets, ensuring that they are robust, reliable, and suitable for their intended applications.
+
+
+---
+
+## License
+
+This project is licensed under the **MIT License**. 
+
+### Summary of the MIT License:
+- You are free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of this software, provided that the above copyright notice and this permission notice are included in all copies or substantial portions of the software.
+- The software is provided "as-is," without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement.
+
+For full details, see the [LICENSE](LICENSE) file included in this repository.
+
+---.
+
+If you use this library in your research, please consider citing it or contributing to its development!
