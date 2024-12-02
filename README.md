@@ -139,13 +139,19 @@ The library provides a module for computing an **aggregated quality score** base
 
 The library includes a **SMD Card Tool** to assist researchers in documenting and summarizing their datasets. This tool enables:
 
-- **Extraction of Descriptive Information**: Automatically gathers and summarizes general dataset details.
 - **Standardized Reporting**: Generates a JSON-formatted card summarizing:
   - General dataset information
-  - Quantitative results
-  - Task-specific performance metrics
+  - Synthetic Data Quality (Quantitative)
+  - Task-specific performance metrics (Quantitative)
+  - Human-based Evaluation (Qualitative)
   - Ethical considerations and limitations
+  - Synthetic Dataset Usage
+  - Synthetic Dataset Training & Validation Process
+  - Reference Dataset General Information
 - **Customizable Templates**: Tailor the SMD Card to specific regulatory or research requirements.
+
+  ![Sinkove Synthetic CSAW 100k Mammograms - DIDSR ScoreCard_Page_1](https://github.com/user-attachments/assets/c8d3ade2-f509-407f-84bc-2190a3dfd382)
+
 
 ---
 
