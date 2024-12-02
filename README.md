@@ -182,12 +182,4 @@ This library aims to simplify and standardize the evaluation of synthetic datase
 
 This project is licensed under the **MIT License**. 
 
-### Summary of the MIT License:
-- You are free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of this software, provided that the above copyright notice and this permission notice are included in all copies or substantial portions of the software.
-- The software is provided "as-is," without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement.
-
-For full details, see the [LICENSE](LICENSE) file included in this repository.
-
----.
-
 If you use this library in your research, please consider citing it or contributing to its development!
